@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplication Table Generator</title>
+</head>
+<body>
+    <style>
+        button{
+            background-color: green;
+            border: none;
+            color: white;
+            font-size: 30px;
+            width: 10%;
+            height: 50px;
+            border-radius: 20px;
+        }
+        input{
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+        }
+    </style>
+
+<h1>Multiplication Table Generator</h1>
+<div class="body">
+    <input type="" id="start" value="">
+    <input type="" id="end" value="">
+
+    <button onclick="generateTable()">Generate</button>
+    <div id="table"></div>
+</div>
+
+
+</body>
+<script>
+    function generateTable() {
+    let start = parseInt(document.getElementById("start").value);
+    let end = parseInt(document.getElementById("end").value);
+    let tableDiv = document.getElementById("table");
+    
+    tableDiv.innerHTML = "";
+
+    for (let number = start; number <= end; number++) {
+        let eachHeading = document.createElement("br");
+        tableDiv.appendChild(eachHeading);
+
+        for (let i = 0; i <= 12; i++) {
+            let result = `${number} x ${i} = ${number * i}`;
+            let display = document.createElement('p');
+            display.textContent = result;
+            tableDiv.appendChild(display);
+          
+        }
+    }
+}
+
+</script>
+</html>
